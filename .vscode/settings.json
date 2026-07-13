@@ -1,0 +1,9 @@
+{
+    "workbench.browser.openLocalhostLinks": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.mouseWheelZoom": true,
+    "telemetry.editStats.details.enabled": true,
+    "telemetry.performance.inputLatencySamplingProbability": 0,
+    "application.experimental.rendererProfiling": true
+}

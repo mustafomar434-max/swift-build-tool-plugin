@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="description" content="Global Football News brings the latest football headlines, transfer updates, match previews, and live stories in one place.">
+  <meta name="keywords" content="football news, soccer news, transfers, live scores, football updates">
+  <meta name="robots" content="index,follow">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Football News">
+  <meta property="og:title" content="Global Football News">
+  <meta property="og:description" content="Latest football news, transfers, and match updates from around the world.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="./">
+  <title>Global Football News</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="./">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-brand">
+        <span class="site-logo" aria-hidden="true">⚽</span>
+        <div>
+          <h1>Global Football News</h1>
+          <p>Your source for the latest world football headlines, match previews, and live scores.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="google-search hero-search">
+      <h2>Search Google for Football News</h2>
+      <p>Type any team, player, or topic to open Google results instantly.</p>
+      <form action="https://www.google.com/search" method="get" target="_blank" rel="noreferrer" class="search-form">
+        <input type="text" name="q" placeholder="Search football news, players, or teams..." aria-label="Search on Google">
+        <button type="submit">Search Google</button>
+      </form>
+      <div class="google-links">
+        <a href="https://www.google.com" target="_blank" rel="noreferrer">Open Google</a>
+        <a href="https://www.google.com/search?q=football+news" target="_blank" rel="noreferrer">Open Football News on Google</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Welcome to Global Football News</h2>
+      <p>Get the newest results, transfer updates, and league standings from football competitions around the world.</p>
+    </section>
+
+    <section>
+      <h2>Today's Headlines</h2>
+      <ul>
+        <li>Live score updates from major leagues</li>
+        <li>International match previews and analysis</li>
+        <li>Breaking football stories from every continent</li>
+      </ul>
+      <button id="actionButton">Load live news feed</button>
+      <p id="message" class="hidden">Connecting to the live news source...</p>
+    </section>
+
+    <section class="gallery-section">
+      <h2>Featured Football Moments</h2>
+      <div class="image-grid">
+        <article class="image-card">
+          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=80" alt="Stadium lights at night">
+          <div class="caption">Match night at the stadium</div>
+        </article>
+        <article class="image-card">
+          <img src="https://images.unsplash.com/photo-1507149833265-60c372daea22?auto=format&fit=crop&w=900&q=80" alt="Football team celebrating a goal">
+          <div class="caption">Players celebrating a winning goal</div>
+        </article>
+        <article class="image-card">
+          <img src="https://images.unsplash.com/photo-1517927033932-b3d18e7f24a1?auto=format&fit=crop&w=900&q=80" alt="Football ball on the pitch">
+          <div class="caption">The ball ready for kickoff</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="player-section">
+      <h2>Player Spotlight</h2>
+      <div class="player-grid">
+        <article class="player-card">
+          <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=80" alt="Youri Tielemans celebrating after a match">
+          <div class="player-info">
+            <h3>Youri Tielemans</h3>
+            <p>Midfield maestro linked with Manchester United for a major transfer boost.</p>
+          </div>
+        </article>
+        <article class="player-card">
+          <img src="https://images.unsplash.com/photo-1517927033932-b3d18e7f24a1?auto=format&fit=crop&w=900&q=80" alt="Jude Bellingham driving forward on the pitch">
+          <div class="player-info">
+            <h3>Jude Bellingham</h3>
+            <p>The young midfield star continues to dominate with creative play and big goals.</p>
+          </div>
+        </article>
+        <article class="player-card">
+          <img src="https://images.unsplash.com/photo-1508606572321-901ea4437077?auto=format&fit=crop&w=900&q=80" alt="Karim Adeyemi sprinting during a match">
+          <div class="player-info">
+            <h3>Karim Adeyemi</h3>
+            <p>Speedy forward making waves after a breakthrough agreement with Barcelona.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>World Cup Day 16: France vs Spain</h2>
+      <p>France and Spain clash in a highly anticipated World Cup showdown. Follow the match updates, key players, and post-game analysis right here.</p>
+    </section>
+
+    <section>
+      <h2>Jude Bellingham Update</h2>
+      <p>Jude Bellingham continues to shine on the world stage with strong performances and key contributions for his team. Stay tuned for injury updates, match impact, and transfer rumors surrounding the midfield star.</p>
+    </section>
+
+    <section>
+      <h2>Raphinha Transfer News</h2>
+      <p>Club sources say Raphinha is not for sale right now. He remains a key player for the project, and the team wants to keep him as part of their long-term plans.</p>
+    </section>
+
+    <section>
+      <h2>Breaking News: Barcelona</h2>
+      <p>Barcelona do not plan to sell key players this transfer window. The club is focused on stability and keeping its core squad intact for the season.</p>
+    </section>
+
+    <section>
+      <h2>Breaking News: Barcelona Bid</h2>
+      <p>Barcelona president Joan Laporta confirms the bid for Julián Álvarez is still valid but warns it is not open forever. The club is monitoring the situation closely as negotiations continue.</p>
+    </section>
+
+    <section>
+      <h2>Exclusive: Barcelona Agree Deal</h2>
+      <p>Barcelona have reached a verbal agreement to sign Karim Adeyemi for €22m plus €7m in add-ons, linked to title wins and appearance milestones. The contract structure is performance-based, and both clubs are finalizing the last details.</p>
+    </section>
+
+    <section>
+      <h2>Breaking News: Manchester United</h2>
+      <p>Manchester United are closing in on a deal for Youri Tielemans. Sources say the transfer is expected to be completed soon as the club moves quickly to strengthen midfield.</p>
+    </section>
+
+    <section id="live-news">
+      <div class="live-news-header">
+        <div>
+          <h2>Live Football News Feed</h2>
+          <p class="api-source">Source: <a href="news.json" target="_blank" rel="noreferrer">Local API / news.json</a></p>
+        </div>
+        <button id="refreshNewsButton" class="secondary-button">Refresh live feed</button>
+      </div>
+      <div id="newsFeed" class="news-feed">
+        <div class="news-placeholder">Click the button above to load the latest football stories, links, and images from the live feed.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Global Football News — bringing world football coverage to your screen.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

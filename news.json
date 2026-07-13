@@ -1,0 +1,32 @@
+{
+  "articles": [
+    {
+      "category": "Transfer News",
+      "title": "Manchester United close in on Youri Tielemans deal",
+      "description": "Sources say Manchester United are moving quickly to sign the Belgian midfielder before the transfer window closes.",
+      "url": "https://example.com/tielemans-to-united",
+      "image": "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "category": "Match Preview",
+      "title": "France vs Spain: World Cup Day 16 showdown",
+      "description": "A head-to-head preview of the epic clash, including key players to watch and tactical battles to expect.",
+      "url": "https://example.com/france-vs-spain-preview",
+      "image": "https://images.unsplash.com/photo-1507149833265-60c372daea22?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "category": "Player Focus",
+      "title": "Jude Bellingham continues to shine on the world stage",
+      "description": "The young midfielder is delivering top performances with consistent influence for club and country.",
+      "url": "https://example.com/bellingham-rise",
+      "image": "https://images.unsplash.com/photo-1508606572321-901ea4437077?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "category": "Club Update",
+      "title": "Barcelona firm on retaining key players this window",
+      "description": "Barcelona are prioritizing squad stability and keeping core contributors in place amid transfer speculation.",
+      "url": "https://example.com/barcelona-stability",
+      "image": "https://images.unsplash.com/photo-1517927033932-b3d18e7f24a1?auto=format&fit=crop&w=900&q=80"
+    }
+  ]
+}
