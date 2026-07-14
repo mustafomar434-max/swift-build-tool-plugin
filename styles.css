@@ -1,8 +1,11 @@
 :root {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #222;
-  background: #f4f7fb;
+  color: #f8fafc;
+  background: #020617;
   line-height: 1.6;
+  --panel-bg: rgba(15, 23, 42, 0.82);
+  --panel-border: rgba(255, 255, 255, 0.14);
+  --text-muted: #cbd5e1;
 }
 
 * {
@@ -13,9 +16,12 @@ body {
   margin: 0;
   min-height: 100vh;
   position: relative;
-  background-image: url('https://images.unsplash.com/photo-1517927033932-b3d18e7f24a1?auto=format&fit=crop&w=1600&q=80');
+  background:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.32), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.25), transparent 30%),
+    linear-gradient(135deg, #020617 0%, #0f172a 36%, #1d4ed8 68%, #0f766e 100%);
   background-size: cover;
-  background-position: center;
+  background-position: 0% center;
   background-attachment: fixed;
   color: #ffffff;
   overflow-x: hidden;
@@ -25,29 +31,18 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 25, 47, 0.55), rgba(10, 25, 47, 0.8));
+  background:
+    linear-gradient(135deg, rgba(2, 6, 23, 0.55) 0%, rgba(15, 23, 42, 0.22) 45%, rgba(2, 132, 199, 0.18) 100%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 26%);
+  backdrop-filter: blur(2px);
   pointer-events: none;
   z-index: -1;
 }
 
-body::after {
-  content: '⚽';
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.08);
-  font-size: clamp(8rem, 18vw, 22rem);
-  font-weight: 900;
-  letter-spacing: 0.5rem;
-  transform: rotate(-10deg);
-  pointer-events: none;
-  z-index: -1;
-}
+/* removed large watermark emoji for cleaner background */
 
 .container {
-  width: min(100%, 960px);
+  width: min(100%, 1020px);
   margin: 0 auto;
   padding: 1.5rem;
   position: relative;
@@ -55,19 +50,41 @@ body::after {
 }
 
 .site-header {
-  background-image: linear-gradient(135deg, rgba(79, 70, 229, 0.85), rgba(34, 197, 94, 0.85)),
+  background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.85), rgba(16, 185, 129, 0.8)),
                     url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
   background-position: center;
   color: white;
-  min-height: 360px;
-  padding: 4rem 0;
+  body::after {
+    content: '⚽';
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.06);
+    font-size: clamp(8rem, 18vw, 22rem);
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+    transform: rotate(-8deg) translateY(10px);
+    pointer-events: none;
+    z-index: -1;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.08);
   text-align: center;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 0 -80px 120px rgba(2, 6, 23, 0.28);
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.16), transparent 45%, rgba(255,255,255,0.08));
+  pointer-events: none;
 }
 
 .site-header::after {
@@ -80,6 +97,7 @@ body::after {
   font-size: clamp(10rem, 18vw, 18rem);
   color: rgba(255, 255, 255, 0.08);
   pointer-events: none;
+  filter: drop-shadow(0 0 24px rgba(255,255,255,0.12));
 }
 
 .site-brand {
@@ -95,12 +113,24 @@ body::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  background: rgba(255, 255, 255, 0.18);
+  width: clamp(3rem, 6vw, 5.5rem);
+  height: clamp(3rem, 6vw, 5.5rem);
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
   border-radius: 50%;
-  font-size: 1.6rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  color: rgba(255,255,255,0.14);
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* prevent header content from being hidden behind the fixed logo */
+.site-header .container {
+  padding-left: calc(clamp(3rem, 6vw, 5.5rem) + 1rem);
 }
 
 .site-header h1 {
@@ -114,7 +144,7 @@ body::after {
 }
 
 main {
-  padding: 2rem 0;
+  padding: 2.5rem 0 3.25rem;
 }
 
 .gallery-section {
@@ -132,6 +162,7 @@ main {
   overflow: hidden;
   border-radius: 1rem;
   box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .image-card img {
@@ -169,10 +200,18 @@ main {
 }
 
 .player-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), #ffffff);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), #f8fafc);
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.player-card:hover,
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.16);
 }
 
 .player-card img {
@@ -197,13 +236,19 @@ main {
 }
 
 section {
-  margin-bottom: 2rem;
-  background: rgba(15, 23, 42, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.78));
+  border: 1px solid var(--panel-border);
   border-radius: 1.5rem;
-  padding: 1.75rem;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(10px);
+  padding: 2rem;
+  box-shadow: 0 26px 55px rgba(2, 6, 23, 0.24);
+  backdrop-filter: blur(12px);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.28);
 }
 
 .google-search {
@@ -269,13 +314,16 @@ section {
 
 h2 {
   margin-top: 0;
+  margin-bottom: 0.7rem;
   letter-spacing: 0.02em;
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(1.6rem, 2.2vw, 2.25rem);
 }
 
 section p,
 section li {
-  color: #dbeafe;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
 section ul {
@@ -321,29 +369,30 @@ button:hover {
 .news-feed {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  margin-top: 1.25rem;
+  gap: 1.15rem;
+  margin-top: 1.35rem;
 }
 
 .news-card {
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1.2rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
   overflow: hidden;
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
   display: flex;
   flex-direction: column;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .news-card img {
   width: 100%;
-  height: 200px;
+  height: 210px;
   object-fit: cover;
   display: block;
 }
 
 .news-card-content {
-  padding: 1.25rem;
+  padding: 1.3rem 1.3rem 1.4rem;
 }
 
 .news-card-content strong {
@@ -390,6 +439,11 @@ button:hover {
   gap: 1rem;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 0.3rem;
+}
+
+.live-news-header h2 {
+  margin-bottom: 0;
 }
 
 .api-source {

@@ -45,12 +45,33 @@ async function loadLiveNews() {
   }
 }
 
-actionButton.addEventListener("click", () => {
-  loadLiveNews();
-});
+if (actionButton) {
+  actionButton.addEventListener("click", () => loadLiveNews());
+}
 
-refreshNewsButton.addEventListener("click", () => {
+if (refreshNewsButton) {
+  refreshNewsButton.addEventListener("click", () => loadLiveNews());
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  // auto-load news on page open
   loadLiveNews();
+  // auto-load live matches and refresh every 30s
+  loadLiveMatches();
+  const refreshLiveButton = document.getElementById('refreshLiveButton');
+  if (refreshLiveButton) refreshLiveButton.addEventListener('click', () => loadLiveMatches());
+  setInterval(loadLiveMatches, 30000);
+  const loadWorldBtn = document.getElementById('loadWorld2026');
+  if (loadWorldBtn) loadWorldBtn.addEventListener('click', () => loadWorld2026());
+  // auto-load World Cup data once on page open
+  loadWorld2026();
+  // wire team filter inputs
+  const teamFilter = document.getElementById('teamFilter');
+  if (teamFilter) teamFilter.addEventListener('input', () => renderLiveMatchesFiltered());
+  const liveFilter = document.getElementById('liveFilter');
+  if (liveFilter) liveFilter.addEventListener('change', () => renderLiveMatchesFiltered());
+  const worldTeamFilter = document.getElementById('worldTeamFilter');
+  if (worldTeamFilter) worldTeamFilter.addEventListener('input', () => renderWorld2026Filtered());
 });
 
 if ('serviceWorker' in navigator) {
